@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
+    <title>FSP App</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+        
+        *
+        {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        /* Redish Color */
+        :root 
+        {
+          --redish-color: #C20833;
+        }
+        
+        :root
+        {
+            --grayish-color: #73767A;
+        }
+
+        .flex-center
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .uppercase
+        {
+            text-transform: uppercase !important;
+        }
+        
+        a:hover
+        {
+            text-decoration: none !important;
+        }
+        
+        ul
+        {
+            list-style: none;
+            margin: 0;
+        }
+        
+        .bttn
+        {
+            border: none !important;
+            outline: none !important;
+            cursor: pointer;
+            transition: .4s;
+        }
+        
+        .redish-color
+        {
+            color: var(--redish-color);
+        }
+        
+        .redish-bg
+        {
+            background: var(--redish-color);
+        }
+        
+        
+        
+        
+        
+        
+        #logo-img
+        {
+            width: 13em;
+        }
+        
+        .navs
+        {
+            display: flex;
+        }
+        
+        .navs li
+        {
+            margin-right: 15px;
+/*            margin-right: 20px;*/
+        }
+        
+        .navs li a
+        {
+            color: #fafafa;
+            font-weight: 400;
+            font-weight: 500;
+        }
+        
+        .navs li:hover
+        {
+            border-bottom: solid 1px #fff;
+            color: #fff;
+        }
+        
+        .navs li:hover a
+        {
+            color: #fff !important;
+            border-bottom: solid 1px #fff;
+        }
+        
+        
+        
+        
+        .side-navs
+        {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            padding: .3em;
+            padding: .5em .25em;
+            transform: translateY(-50%);
+            z-index: 999;
+            background: var(--grayish-color);
+            border-radius: 3px 0 0 3px;
+            flex-direction: column;
+/*            transform: translateX(110%);*/
+        }
+        
+        .side-navs.visible
+        {
+            transform: translateX(0);
+        }
+   
+        .side-navs nav ul
+        {
+            margin: 0 !important;
+        }
+        
+        
+        .side-navs nav ul li:hover .side-navs nav ul li a
+        {
+            color: #fafafa;
+        }
+        
+        .side-navs nav ul li a
+        {
+            color: #fafafa;
+            font-size: 1.5em;
+            margin: 1em .5em;
+        }
+        
+        
+        
+        
+        .main-cont
+        {
+            scroll-behavior: smooth;
+        }
+        
+        
+        header
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--grayish-color);
+            padding: 0 5em;
+            -webkit-box-shadow: 0 10px 10px -6px rgba(0,0,0,.5);
+            -moz-box-shadow: 0 10px 10px -6px rgba(0,0,0,.5);
+            box-shadow: 0 10px 10px -6px rgba(0,0,0,.5);
+            z-index: 999;
+        }
+        
+        .header-content
+        {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        header .header-content nav ul
+        {
+            margin: auto 0
+        }
+        
+        .logo
+        {
+            font-weight: bold;
+            font-size: ;
+            color: #fff;
+        }
+        
+        .nr > a
+        {
+            font-size: 16px !important;
+            vertical-align: bottom;
+            border-bottom: solid 2px #fafafa;
+            font-weight: 400 !important;
+            margin-right: 3em;
+/*            color: var(--redish-color) !important;*/
+            transition: .2s;
+        }
+        
+        .navs li.nr:hover
+        {
+            text-decoration: none !important;
+            border-bottom: none;
+        }
+        
+        .nr:hover.nr > a
+        {
+            border-bottom: solid 2px #fff;;
+            color: #fff !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+        }
+        
+        .fas.fa-phone-alt
+        {
+            margin-right: 3px;
+            color: var(--redish-color);
+        }
+        
+        
+        
+        
+        .home-cont
+        {
+            position: relative;
+            height: 100vh;
+/*            width: 100vh;*/
+            color: #fafafa;
+            justify-content: flex-start;
+        }
+        
+        #home-bg
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 125vh;
+            height: 120vh;
+            
+            background: url(photo-1505118380757-91f5f5632de0.jpeg);
+            background: url("https://res.cloudinary.com/dxcrd5sos/image/upload/v1641847653/pexels-pixabay-248747_ppauei.jpg");
+/*            background: url("https://res.cloudinary.com/dxcrd5sos/image/upload/v1641971494/pexels-beth-easton-2433985_gpkwrq.jpg");*/
+            filter: grayscale(.6);
+            background-size: cover; 
+            -webkit-box-shadow: 0 10px 20px -6px rgba(0,0,0,.4);
+            -moz-box-shadow: 0 10px 20px -6px rgba(0,0,0,.4);
+            box-shadow: 0 10px 20px -6px rgba(0,0,0,.4);
+        }
+        
+        
+        
+        .sale-headl
+        {
+            font-size: 5em;
+            font-weight: bolder;
+            word-spacing: .1em;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-weight: 500;
+        }
+    
+        .sub-headl
+        {
+            transform: translateX(3.5em);
+            font-size: 1em;
+            font-size: 1.3em;
+            font-weight: 400;
+            margin-bottom: 5rem;
+/*            margin-bottom: 6rem;*/
+            text-shadow: 1px 1px 1px rgba(0,0,0,.9);
+            color: #fff;
+        }
+        
+        .home-screen-bttn
+        {
+            position: relative;
+            background: var(--redish-color);
+            color: #fafafa;
+            font-weight: 500;
+            padding: .8em 1.3em;
+            padding: 1em 1.8em;
+            transition: .2s;
+        }
+        
+        .home-screen-bttn:hover
+        {
+            background: #fafafa;
+            color: var(--grayish-color);
+            color: var(--redish-color);
+        }
+        
+        #zu-produke
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        
+        #about-us-cont
+        {
+            position: relative;
+            width: 50%;
+            min-width: 400px;
+            padding: 3.5em;
+            color: #fafafa;
+            background: var(--grayish-color);
+            transition: .6s ease-out;
+/*
+            transform: translateY(80%);
+            opacity: 0;
+*/
+        }
+        
+        #about-us-cont.extended
+        {
+            width: 100% !important;
+        }
+        
+        #about-us-cont.visible
+        {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+/*        #about-us-cont:before, #about-us-cont:after*/
+        .about-shadow,
+        .about-shadow2
+        {
+            z-index: -1 !important;
+            position: absolute;
+            content: "";
+            bottom: 25px;
+            left: 10px;
+            width: 50%;
+            top: 80%;
+            max-width: 300px;
+            background: #777;
+            -webkit-box-shadow: 0 35px 20px rgba(0,0,0,.3);
+            -moz-box-shadow: 0 35px 20px rgba(0,0,0,.3);
+            box-shadow: 0 35px 20px rgba(0,0,0,.3);
+            -webkit-transform: rotate(-8deg);
+            -moz-transform: rotate(-8deg);
+            -o-transform: rotate(-8deg);
+            -ms-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+        }
+/*        #about-us-cont:after*/
+        .about-shadow2
+        {
+            -webkit-transform: rotate(8deg);
+            -moz-transform: rotate(8deg);
+            -o-transform: rotate(8deg);
+            -ms-transform: rotate(8deg);
+            transform: rotate(8deg);
+            right: 10px;
+            left: auto;
+        }
+        
+        #about-us-cont h4
+        {
+            margin-bottom: 1.5em;
+        }
+        
+        #about-us-cont p
+        {
+            line-height: 28px;
+        }
+        
+        .show-more-bttn
+        {
+            background:  #fafafa;
+            width: 50px;
+            height: 50px;
+            margin-top: 2.5em;
+            border-radius: 50%;
+            font-size: 1.3em;
+            transition: .2s;
+            transform: rotate(0);
+        }
+        
+        .show-more-bttn.flip
+        {
+            transform: rotate(180deg) !important;
+        }
+        
+        
+        
+        
+        .produkte-headl
+        {
+            position: relative;
+            color: crimson;
+            margin-top: 3em; 
+            margin-bottom: 1.5em;
+            text-align: center;
+        }
+        
+        .produkte-headl:before
+        {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 14em;
+            height: 1px;
+            background: #C20833;
+        }
+        
+        
+        
+        #produkte
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+/*            grid-gap: 10em;*/
+/*            grid-gap: 10%;*/
+            grid-column-gap: 12%;
+            grid-row-gap: 10em;
+            grid-row-gap: 5em;
+        }
+        
+        
+        .card
+        {
+            border: none;
+        }
+        
+        .card-body
+        {
+            padding: 0;
+        }
+        
+        .footer-headl,
+        .produkt-bttn,
+        .card-title,
+        .card-text
+        {
+            text-transform: uppercase;
+        }
+        
+        .card-img-top
+        {
+            position: relative;
+            margin-bottom: 2em;
+            -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.3) inset;
+            -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.3) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.3) inset;
+        }
+        
+        .card-img-top:before, .card-img-top:after
+        {
+            content:"";
+            position:absolute;
+            z-index:-1;
+            -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+            -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+            box-shadow:0 0 20px rgba(0,0,0,0.8);
+            top:50%;
+            bottom:0;
+            left:10px;
+            right:10px;
+            -moz-border-radius:100px / 10px;
+            border-radius:100px / 10px;
+        }
+        .card-img-top:after
+        {
+            right:10px;
+            left:auto;
+            -webkit-transform:skew(8deg) rotate(3deg);
+               -moz-transform:skew(8deg) rotate(3deg);
+                -ms-transform:skew(8deg) rotate(3deg);
+                 -o-transform:skew(8deg) rotate(3deg);
+                    transform:skew(8deg) rotate(3deg);
+        }
+        
+        .card-title
+        {
+            margin-bottom: .3em;
+            font-weight: bold;
+            font-weight: 600;
+        }
+        
+        .card-text
+        {
+            font-size: 14px;
+            line-height: 1.22em;
+            font-weight: 500;
+        }
+        
+        .produkt-bttn
+        {
+            background: var(--grayish-color);
+            color: #fafafa;
+            border-radius: 3px;
+            padding: .5em 1.3em;
+            margin-top: .5em;
+        }
+        
+        .produkt-bttn:hover
+        {
+            color: #fff;
+            background: var(--redish-color);
+        }
+        
+        
+        
+        .price
+        {
+            font-size: 2em;
+            font-size: 2.1em;
+            margin-bottom: 0.1em;
+        }
+        
+        .eur
+        {
+            font-size: small;
+            vertical-align: super;
+        }
+        
+        
+        
+        
+        
+        
+        
+        footer
+        {
+            position: relative;
+/*            width: 100vw;*/
+/*            min-height: 35em;*/
+            background: var(--grayish-color);
+            background: var(--redish-color);
+            margin-top: 10em;
+            color: #fafafa;
+            padding-top: 3em;
+            padding-bottom: 8em;
+            z-index: 99999;
+        }
+        
+        .to-top-btn
+        {
+            position: absolute;
+            bottom: 2.5em;
+            right: 5%;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5em;
+            border-radius: 3px;
+            transition: .2s;
+            cursor: pointer;
+            border: solid 1px #fafafa;
+        }
+        
+        .to-top-btn:before
+        {
+            content: 'Back to top';
+            position: absolute;
+            left: -6.5em;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+        }
+        
+/*
+        .to-top-btn:hover.to-top-btn:before
+        {
+            color: #fff !important;
+        }
+*/
+        
+        .to-top-btn:hover
+        {
+            background: #fff;;
+/*            color: var(--redish-color);*/
+        }
+        
+        .to-top-btn:hover i
+        {
+            color: var(--redish-color);
+        }
+    
+        .footer-line
+        {
+            width: 90%;
+            height: 1px;
+            background: #fafafa;
+            margin-top: 5em;
+            margin: 3em auto;
+            margin-top: 0;
+        }
+        
+        .footer-content
+        {
+/*            background: blue;*/
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 13.5%;
+        }
+        
+        .footer-headl
+        {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 26px;
+        }
+        
+        .footer-headl-line
+        {
+            width: 8%;
+            height: 1px;
+            margin-top: 1em;
+            margin-bottom: 1.5em;
+            background: #fafafa;
+        }
+        
+        .footer-ul li
+        {
+            line-height: 2em;
+            line-height: 2.2em;
+            line-height: 2.3em;
+            line-height: 2.25em;
+            font-size: 16px;
+        }
+        
+        .footer-ul li span
+        {
+            min-width: 35%;
+            min-width: 30%;
+            float: left;
+        }
+        
+        .footer-ul.first li span
+        {
+            min-width: 35%;
+/*            min-width: 40%;*/
+        }
+        
+        .footer-ul li a
+        {
+            position: relative;
+            color: #fafafa;
+            transform: .2s;
+        }
+        
+        .footer-ul li a:hover
+        {
+            color: #fff;
+            font-weight: bold;
+        }
+        
+/*
+        .footer-ul li a:before
+        {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -50%;
+            height: 2px;
+            width: 45%;
+            width: 40%;
+            background: var(--redish-color);
+        }
+*/
+        
+        .footer-ul li a:hover .footer-ul li a:before
+        {
+            width: 50% !important;
+            left: 0;
+            bottom: -50%;
+        }
+        
+        
+        
+        @media only screen and (max-width: 768px) 
+        {
+            .card
+            {
+                font-size: .8em;
+            }
+            
+            .card .card-text
+            {
+                font-size: 1em;
+            }
+            
+            footer
+            {
+                padding-bottom: 10em
+            }
+            
+            .footer-content
+            {
+                grid-template-columns: 1fr;
+            }
+            
+            .to-top-btn
+            {
+                bottom: 2em;
+            }
+            
+            .kontakt-box
+            {
+                margin-bottom: 3em;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 650px)
+        {
+            #produkte
+            {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 995px)
+        {
+            .footer-ul li span,
+            .footer-ul.first li span
+            {
+                min-width: 35%;
+            }
+        }
+        
+        
+        
+        @media only screen and (max-width: 768px)
+        {
+            .fas.fa-chevron-right
+            {
+                transform: rotate(90deg);
+            }
+            
+            #about-us-cont
+            {
+                width: 100%;
+            }
+            
+            #about-us-cont.extended
+            {
+                height: auto !important;
+            }
+        }
+        
+        
+        
+                
+        
+        
+        /* Menu Button */
+        .menu-btn
+        {
+            position: relative;
+            width: 40px;
+            height: 30px;
+            
+        }
+        
+        .sm-line,
+        .m-line,
+        .l-line
+        {
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            height: 3px;
+            background: #fff;
+        }
+        
+        .m-line
+        {
+            top: 30%;
+            width: 60%;
+        }
+        
+        .sm-line
+        {
+            top: 0;
+            width: 40%;
+        }
+        
+        .l-line
+        {
+            top: 50%;
+            width: 100%;
+        }
+        
+        .wheels
+        {
+            position: absolute;
+            bottom: 0;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .wheel
+        {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            border: solid 4px #fff;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /* ------------------------------------------------- POPUP WINDOW */
+        
+        
+        .popup-window
+        {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            width: 100vw;
+            padding-top: 3em;
+            min-height: 100vh;
+            z-index: 99999999;
+            background: #fafafa;
+        }
+        
+        .popup-name
+        {
+/*            font-size: 2.1em;*/
+            font-weight: 400;
+            margin-bottom: .5em;
+            text-transform: capitalize;
+        }
+        
+        .popup-image-cont
+        {
+            position: relative;
+            display: grid;
+            grid-template-columns: 8fr 4fr;
+            background: #313131;
+            box-shadow: ;
+        }
+        
+        .popup-image-box
+        {
+            position: relative;
+        }
+        
+        .popup-image
+        {
+            object-fit: cover;
+        }
+        
+        .image-icon
+        {
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            z-index: 999999999;
+            background: lightgray;
+            background: rgb(211,211,211,.7);
+            font-size: 1.5em;
+        }
+        
+        .image-icon.icon-l
+        {
+            left: -26px;
+        }
+        
+        .image-icon.icon-r
+        {
+            right: -26px;
+        }
+        
+        
+        
+        .popup-icon-data
+        {
+            
+        }
+        
+        .popup-price-cont
+        {
+            color: var(--redish-color);
+            font-weight: 400;
+            padding-top: .5em;
+            display: grid;
+            grid-template-columns: 8fr 4fr;
+        }
+        
+        .popup-price
+        {
+            font-size: 1.6em;
+            font-size: 1.8em;
+            font-weight: 500;
+/*            font-weight: 400;*/
+            padding-left: .5em;
+            padding-left: .3em;
+        }
+        
+        .popup-price p
+        {
+            font-size: small;
+            font-weight: 400;
+        }
+        
+        .popup-main-data-cont
+        {
+/*            margin-bottom: 3em;*/
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            transition: .4s;
+        }
+        
+        .popup-car-data,
+        .popup-size-data
+        {
+            position: relative;
+            margin-bottom: 2em;
+            background: lightgray;
+/*            justify-content: space-between;*/
+            padding: 2em;
+            flex-direction: column;
+        }
+        
+        .popup-main-data-cont.car.exp,
+        .popup-main-data-cont.size.exp
+        {
+            grid-template-columns: 8fr 4fr;
+        }
+        
+        .popup-car-data h5,
+        .popup-size-data h5
+        {
+            margin: 0;
+        }
+        
+        .data-headl-cont
+        {
+            width: 100%;
+            display: flex;
+            margin-bottom: 1.5em;
+            justify-content: flex-start;
+            justify-content: space-between;
+        }
+        
+        .daten-icon
+        {
+            font-size: 3.5em;
+        }
+        
+        
+        
+        /* Data container next to Img container */
+        .popup-icon-data-cont
+        {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .popup-icon-data
+        {
+            flex-direction: column;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            color: #fff;
+            padding: 1.5em;
+/*            padding: 3em;*/
+/*            margin: auto 0; */
+            padding-right: 1.5em;
+            padding-right: 2em;
+        }
+        
+        .icon-data-cont
+        {
+            
+        }
+        
+        .icon-data-cont .icon
+        {
+            font-size: 2em;
+            margin-right: .8em;
+            margin-right: .5em;
+        }
+        
+        .descr-box p
+        {
+            margin: 0;
+            font-weight: 500;
+            font-size: 15px;
+        }
+        
+        .descr-box .data
+        {
+            font-weight: 400;
+            color: rgba(255,255,255,.8);
+            font-size: 12px;
+            font-size: 14px;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+
+<div class="main-cont">
+<!-- Popup Window -->
+<div class="popup-window">
+    <div class="container">
+        <h2 class="popup-name redish-color">
+            <span class="uppercase">DFSK -</span> Fengon 5
+        </h2>
+        <div class="popup-image-cont">
+            <div class="popup-image-box">
+                <div class="image-icon icon-l flex-center">
+                    <i class="fas fa-chevron-left redish-color"></i>
+                </div>
+                <div class="image-icon icon-r flex-center">
+                    <i class="fas fa-chevron-right redish-color"></i>
+                </div>
+                <div>
+                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="">
+                </div>
+            </div>
+            <div class="popup-icon-data-cont">
+            <div class="popup-icon-data">
+                   <div></div>
+                    <div class="icon-data-cont flex-center">
+                        <div class="icon"><i class="fas fa-atom"></i></div>
+                        <div class="descr-box">
+                            <p class="descr">Leistung</p>
+                            <p class="data">86 kW / 155 PS</p>
+                        </div>
+                    </div>
+                    <div class="icon-data-cont flex-center">
+                        <div class="icon"><i class="fas fa-atom"></i></div>
+                        <div class="descr-box">
+                            <p class="descr">Leistung</p>
+                            <p class="data">86 kW / 155 PS</p>
+                        </div>
+                    </div>
+                    <div class="icon-data-cont flex-center">
+                        <div class="icon"><i class="fas fa-atom"></i></div>
+                        <div class="descr-box">
+                            <p class="descr">Hochstgeschwindigkeit</p>
+                            <p class="data">86 kW / 155 PS</p>
+                        </div>
+                    </div>
+                    <div class="icon-data-cont flex-center">
+                        <div class="icon"><i class="fas fa-atom"></i></div>
+                        <div class="descr-box">
+                            <p class="descr">Verbrauch kombiniert</p>
+                            <p class="data">86 kW / 155 PS</p>
+                        </div>
+                    </div>
+                    <div class="icon-data-cont flex-center">
+                        <div class="icon"><i class="fas fa-atom"></i></div>
+                        <div class="descr-box">
+                            <p class="descr">Leistung</p>
+                            <p class="data">86 kW / 155 PS</p>
+                        </div>
+                    </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="popup-price-cont">
+            <div></div>
+            <div class="popup-price">
+                ab <span>13.754,00</span> <span class="eur">EUR</span>
+                <p>inkl. 19% MwSt. zzgl. Versand *</p>
+            </div>
+        </div>
+        <div class="popup-main-data-cont car">
+            <div class="popup-car-data">
+                <div class="data-headl-cont">
+                    <h5 class="redish-color">TECHNISCHE DATEN</h5>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="daten-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="technische-daten">
+
+                </div>
+            </div>
+            <div></div>
+        </div>
+        <div class="popup-main-data-cont size">
+            <div class="popup-size-data">
+                <div class="data-headl-cont">
+                    <h5 class="redish-color">MAẞE UND ABMESSUNGEN</h5>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="daten-icon">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </div>
+                <div class="technische-daten">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="side-navs">
+    <nav>
+        <ul>
+            <li><a href="#home-bg"><i class="fas fa-home"></i></a></li>
+            <li><a href="#about-us-cont"><i class="fas fa-user"></i></a></li>
+            <li><a href="#uber"><i class="fas fa-car"></i></a></li>
+        </ul>
+    </nav>
+</div>
+
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <a href="#">
+                <img id="logo-img" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1641791579/coepmobiles-logo-1_xyywtv.png" alt="">
+            </a>
+        </div>
+        <nav>
+            <ul class="navs">
+                <li class="nr"><a href="#"><i class="fas fa-phone-alt"></i> 030-278791-0</a></li>
+                <li><a href="#home-bg">Home</a></li>
+                <li><a href="#products-cont">Über Uns</a></li>
+                <li><a href="#uber">Produkte</a></li>
+                <li><a href="#footer">Kontakt/Info</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <div class="menu-btn flex-center">
+        <div class="sm-line"></div>
+        <div class="m-line"></div>
+        <div class="l-line"></div>
+        <div class="wheels">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+        </div>
+    </div>
+</header>
+<div class="home-cont flex-center">
+    <div id="home-bg"></div>
+    <div class="container">
+        <div class="home-content">
+            <h1 class="sale-headl">FOR SALE</h1>
+            <!--           <h5 class="sub-headl">VERKAUF VON CHINESISCHEN AUTOMOBILEN</h5>-->
+            <h5 class="sub-headl">UNSERE ALTERNATIVEN CHINESISCHEN AUTOMOBILE </h5>
+            <button class="bttn home-screen-bttn flex-center"><a id="zu-produke" href="#uber"></a>ZU DEN ANGEBOTEN</button>
+        </div>
+    </div>
+    <!--         <img src="photo-1505118380757-91f5f5632de0.jpeg" alt="" class="home-bg">-->
+
+
+</div>
+<div id="products-cont">
+    <div class="container">
+        <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
+            <div id="about-us-cont">
+                <div class="about-shadow"></div>
+                <div class="about-shadow2"></div>
+                <h4 class="uppercase">Über Uns</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab reiciendis minima eaque, laudantium possimus, dicta asperiores? Impedit maiores, a ab.</p>
+                <div onclick="toggleAboutCont()" class="show-more-bttn redish-color flex-center">
+                    <i class="fas redish-color fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="uber" class="produkte-headl redish-color">PRODUKTUBERSICHT</h2>
+        <div id="produkte">
+
+
+
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">DFSK Fengon 5</h5>
+                    <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+
+                    <p>Lieferzeit ca. 4 Monate</p>
+
+                    <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                    <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                    <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">DFSK Fengon 5</h5>
+                    <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+
+                    <p>Lieferzeit ca. 4 Monate</p>
+
+                    <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                    <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                    <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                </div>
+            </div>
+
+
+
+
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">DFSK Fengon 5</h5>
+                    <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
+
+                    <p>Lieferzeit ca. 4 Monate</p>
+
+                    <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                    <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                    <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">DFSK Fengon 5</h5>
+                    <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
+
+                    <p>Lieferzeit ca. 4 Monate</p>
+
+                    <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                    <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                    <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">DFSK Fengon 5</h5>
+                    <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
+
+                    <p>Lieferzeit ca. 4 Monate</p>
+
+                    <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                    <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                    <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">DFSK Fengon 5</h5>
+                    <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
+
+                    <p>Lieferzeit ca. 4 Monate</p>
+
+                    <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                    <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                    <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<footer id="footer">
+    <div onclick="topFunction()" class="to-top-btn flex-center">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" class="footer-line"></div>
+    <div class="container">
+        <div class="footer-content">
+            <div class="kontakt">
+
+                <div class="f-line"></div>
+                <div class="kontakt-box">
+                    <div>
+                        <h6 data-aos="fade-up" data-aos-delay="300" data-aos-duration="500" class="footer-headl">Kontakt</h6>
+                        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="300" class="footer-headl-line"></div>
+                        <ul data-aos="fade-up" data-aos-delay="600" data-aos-duration="500" class="footer-ul first">
+                            <li>Cöpmobiles Berlin</li>
+                            <li>Adlergestell 350-351</li>
+                            <li>12489 Berlin</li>
+                            <li><span>Zentrale:</span><a href="#">030-278791-0</a></li>
+                            <li><span>Ersatzteile:</span><a href="#">030-278791-21</a></li>
+                            <li><span>Werkst.meister:</span><a href="#">030-278791-13</a></li>
+                            <li><span>E-mai:</span><a href="#">info@coepmobiles.de</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="information">
+                <h6 data-aos="fade-up" data-aos-delay="300" data-aos-duration="500" class="footer-headl">Information</h6>
+                <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="300" class="footer-headl-line"></div>
+                <ul data-aos="fade-up" data-aos-delay="600" data-aos-duration="500" class="footer-ul">
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href="#">Datenschutz</a></li>
+                    <li><a href="#">AGB</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><span>Mo-Fr:</span><a href="#">7:30 - 16:30 Uhr</a></li>
+                    <li><span>Samstag:</span><a href="#">nach Vereinbarung</a></li>
+                    <li><span>Sonntag:</span><a href="#">Geschlossen</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</footer>
+</div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        const aboutCont = document.querySelector("#about-us-cont");
+        const showMoreBtn = document.querySelector(".show-more-bttn");
+
+
+        // Scroll to top Button
+        const scrollToTop = () => {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 'fast');
+        }
+
+
+        // AOS scrolling
+        AOS.init();
+
+
+        // Toggles About Container
+        const toggleAboutCont = () => {
+            aboutCont.classList.toggle("extended");
+            if (aboutCont.classList.contains("extended")) {
+                showMoreBtn.classList.add("flip");
+            } else {
+                showMoreBtn.classList.remove("flip");
+            }
+        }
+
+
+        // Scroll to top
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }    
+        
+        
+        // -----------------------------------------------------------------------
+        
+        
+        // Scroll Magic
+        
+                // init controller
+//	    var controller = new ScrollMagic.Controller();
+        
+        //        new ScrollMagic.Scene({
+//							triggerElement: "#trigger1",
+//							triggerHook: 1.2, // show, when scrolled 10% into view
+//							duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+//							offset: 60 // move trigger to center of element
+//						})
+//						.setClassToggle("#about-us-cont", "visible") // add class to reveal
+//						.addIndicators() // add indicators (requires plugin)
+//						.addTo(controller);
+//
+//        
+    </script>
+    
+</body>
+</html>
