@@ -32,6 +32,11 @@
         {
             --grayish-color: #73767A;
         }
+        
+        .d-none
+        {
+            display: none;
+        }
 
         .flex-center
         {
@@ -59,7 +64,7 @@
         .bttn
         {
             border: none !important;
-            outline: none !important;
+            outline: none !imporant;
             cursor: pointer;
             transition: .4s;
         }
@@ -693,6 +698,101 @@
         
         @media only screen and (max-width: 768px) 
         {
+            
+        }
+        
+        
+        @media only screen and (max-width: 1200px)
+        {
+            .container .popup-image-cont
+            {
+                grid-template-columns: 1fr;
+            }
+            
+            .popup-image-cont .popup-icon-data-cont
+            {
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .container .popup-price-cont
+            {
+                grid-template-columns: 1fr 11fr;
+                justify-items: end;
+            }
+            
+            .popup-icon-data-cont .popup-icon-data
+            {
+                width: 100%;
+                padding: 3em;
+                display: grid;
+                grid-gap: 1rem;
+                justify-items: start;
+                grid-row-gap: 1.5rem;
+                grid-row-gap: 2.5rem;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            
+            .popup-icon-data-cont
+            {
+/*                place-self: start;*/
+            }
+            
+            .container .popup-main-data-cont
+            {
+                grid-template-columns: 7fr 5fr;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 993px)
+        {
+            .popup-icon-data-cont .popup-icon-data
+            {
+                padding: 1.5em;
+                padding: 2.5em 1.5em;
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .container .popup-main-data-cont.car.extended,
+            .container .popup-main-data-cont.size.extended
+            {
+                grid-template-columns: 10fr 2fr !important;
+            }
+            
+            .popup-car-data .data-headl-cont h5,
+            .popup-size-data .data-headl-cont h5
+            {
+                font-size: .9em;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 768px)
+        {
+/* Popup */
+            .container .popup-main-data-cont
+            {
+                grid-template-columns: 12fr 0fr;
+            }
+            
+            .popup-name
+            {
+                font-size: 1.8em;
+            }
+            
+            .container .popup-main-data-cont.car.extended,
+            .container .popup-main-data-cont.size.extended
+            {
+                grid-template-columns: 12fr 0fr !important;
+            }
+            
+            img.hidden.car
+            {
+                display: none;
+            }
+            
+/* Main Page */
             .card
             {
                 font-size: .8em;
@@ -724,12 +824,33 @@
             }
         }
         
-        
         @media only screen and (max-width: 650px)
         {
             #produkte
             {
                 grid-template-columns: 1fr;
+            }
+            
+            .popup-icon-data-cont .popup-icon-data
+            {
+                grid-template-columns: 1fr;
+                grid-row-gap: 0.8rem;
+                padding: 2em;
+                padding: 1.5em;
+                padding: 1.8em;
+            }
+            
+/*
+            .container .popup-price-cont
+            {
+                grid-template-columns: 1fr 11fr;
+                justify-items: end;
+            }
+*/
+            
+            .container .popup-main-data-cont
+            {
+                grid-template-columns: 12fr 0fr;
             }
         }
         
@@ -740,6 +861,24 @@
             .footer-ul.first li span
             {
                 min-width: 35%;
+            }
+        }
+        
+        
+        
+        @media only screen and (max-width: 420px)
+        {
+            .not-v
+            {
+                display: none;
+            }
+        }
+        
+        @media only screen and (max-width: 350px)
+        {
+            .not-v2
+            {
+                display: none;
             }
         }
         
@@ -843,16 +982,19 @@
             overflow-y: scroll;
             width: 100vw;
             padding-top: 3em;
+            padding-top: 2em;
             min-height: 100vh;
             z-index: 99999999;
-            background: #fafafa;
+            background: #fff;
         }
         
         .popup-name
         {
-/*            font-size: 2.1em;*/
+            font-size: 2.1em;
             font-weight: 400;
+            font-weight: 500;
             margin-bottom: .5em;
+/*            margin-bottom: .3em;*/
             text-transform: capitalize;
         }
         
@@ -862,12 +1004,21 @@
             display: grid;
             grid-template-columns: 8fr 4fr;
             background: #313131;
-            box-shadow: ;
+/*            height: 34em;*/
         }
         
         .popup-image-box
         {
             position: relative;
+/*            height: 34em;*/
+        }
+        
+        .popup-image-box img
+        {
+            width: 100%;
+/*            height: 34em;*/
+            object-fit: cover;
+            
         }
         
         .popup-image
@@ -885,7 +1036,7 @@
             transform: translateY(-50%);
             z-index: 999999999;
             background: lightgray;
-            background: rgb(211,211,211,.7);
+/*            background: rgb(211,211,211,.7);*/
             font-size: 1.5em;
         }
         
@@ -901,26 +1052,26 @@
         
         
         
-        .popup-icon-data
-        {
-            
-        }
+        
+        
+        
         
         .popup-price-cont
         {
             color: var(--redish-color);
             font-weight: 400;
             padding-top: .5em;
+            margin: .5em 0;
             display: grid;
             grid-template-columns: 8fr 4fr;
         }
         
         .popup-price
         {
-            font-size: 1.6em;
             font-size: 1.8em;
+            font-size: 2.1em;
             font-weight: 500;
-/*            font-weight: 400;*/
+            font-weight: 600;
             padding-left: .5em;
             padding-left: .3em;
         }
@@ -929,14 +1080,32 @@
         {
             font-size: small;
             font-weight: 400;
+            margin-top: -5px;
         }
+        
+        
+        
+        
+        
+        
+        
+        
         
         .popup-main-data-cont
         {
 /*            margin-bottom: 3em;*/
             display: grid;
-            grid-template-columns: 6fr 6fr;
+            overflow: hidden;
+            grid-template-columns: 5fr 7fr;
             transition: .4s;
+/*            grid-template-columns: 8fr 4fr;*/
+            
+        }
+        
+        .popup-main-data-cont.car.extended,
+        .popup-main-data-cont.size.extended
+        {
+            grid-template-columns: 8fr 4fr !important;
         }
         
         .popup-car-data,
@@ -945,16 +1114,43 @@
             position: relative;
             margin-bottom: 2em;
             background: lightgray;
-/*            justify-content: space-between;*/
             padding: 2em;
             flex-direction: column;
+            transition: .4s;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         }
         
-        .popup-main-data-cont.car.exp,
-        .popup-main-data-cont.size.exp
+        /* Hidden Car Icon (slides in) */
+        .popup-car-data img.hidden,
+        .popup-size-data img.hidden
         {
-            grid-template-columns: 8fr 4fr;
+            position: absolute;
+            right: 0%;
+            opacity: 0;
+            transition: .4s;
+            transition-delay: .35s;
+            transition-delay: .3s;
+            z-index: -2;
         }
+        
+        .popup-car-data img.hidden.slide-in,
+        .popup-size-data img.hidden.slide-in
+        {
+            right: -8.5rem;
+/*            right: -20%;*/
+            opacity: 1;
+        }
+        
+        .daten-icon
+        {
+            transition-delay: .5s;
+        }
+        
+        .daten-icon.invisible
+        {
+            display: none;
+        }
+        
         
         .popup-car-data h5,
         .popup-size-data h5
@@ -966,14 +1162,39 @@
         {
             width: 100%;
             display: flex;
+            font-size: 1.6em;
             margin-bottom: 1.5em;
             justify-content: flex-start;
             justify-content: space-between;
         }
         
-        .daten-icon
+        .data-headl-cont h5
         {
-            font-size: 3.5em;
+            font-size: 1.03em;
+        }
+        
+        .daten-icon img
+        {
+            transition: .2s;
+        }
+        
+        .icon-ani
+        {
+            animation: icon-ani forwards .5s ease;
+        }
+        
+        @keyframes icon-ani
+        {
+            0%
+            {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            100%
+            {
+                opacity: 0;
+                transform: translateX(100%);
+            }
         }
         
         
@@ -990,11 +1211,11 @@
             flex-direction: column;
             display: flex;
             align-items: flex-start;
-            justify-content: space-between;
+            justify-content: space-around;
             color: #fff;
+            padding: 2.5em;
             padding: 1.5em;
 /*            padding: 3em;*/
-/*            margin: auto 0; */
             padding-right: 1.5em;
             padding-right: 2em;
         }
@@ -1027,140 +1248,344 @@
         }
         
         
+        
+        
+        
+        
+        .invisible
+        {
+            display: none !important;
+        }
+        
+        .technische-daten
+        {
+            display: flex;
+            flex-direction: column;
+            transition: .4s;
+        }
+        
+        .technische-daten.collapsed
+        {
+            height: 0 !important;
+            width: 0 !important;
+            overflow: hidden;
+            transition: 4s;
+        }
+        
+        .technische-daten .data
+        {
+            display: grid;
+            font-size: 16px;
+/*            font-weight: 500;*/
+/*            margin-bottom: 1em;*/
+            padding: .5em;
+            grid-template-columns: 7fr 5fr;
+            grid-template-columns: 6fr 6fr;
+        }
+        
+        .technische-daten .data:last-child
+        {
+            margin-bottom: .3em;
+/*            margin-bottom: 0em;*/
+        }
+        
+        .technische-daten .data:nth-child(2n)
+        {
+            background: #F5F5F5;
+        }
+/*
+        power
+        beschl     xxx
+        Vmax
+        co2
+        verbr
+        kofferr    xxx
+        
+        
+        tank     
+        gew      
+*/
+        
+        
+        
+        /* Slide In Data & Animation */
+        .slide-in-data
+        {
+            transform: translateX(-50%);
+            transform: translateX(-30%);
+            transform: translateX(-35%);
+            opacity: 0;
+            transition: .5s ease;
+/*            transition-delay: .2s;*/
+        }
+        
+        .slide-in
+        {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
     </style>
 </head>
 
 <body>
-
 <div class="main-cont">
-<!-- Popup Window -->
-<div class="popup-window">
-    <div class="container">
-        <h2 class="popup-name redish-color">
-            <span class="uppercase">DFSK -</span> Fengon 5
-        </h2>
-        <div class="popup-image-cont">
-            <div class="popup-image-box">
-                <div class="image-icon icon-l flex-center">
-                    <i class="fas fa-chevron-left redish-color"></i>
-                </div>
-                <div class="image-icon icon-r flex-center">
-                    <i class="fas fa-chevron-right redish-color"></i>
-                </div>
-                <div>
-                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="">
-                </div>
-            </div>
-            <div class="popup-icon-data-cont">
-            <div class="popup-icon-data">
-                   <div></div>
-                    <div class="icon-data-cont flex-center">
-                        <div class="icon"><i class="fas fa-atom"></i></div>
-                        <div class="descr-box">
-                            <p class="descr">Leistung</p>
-                            <p class="data">86 kW / 155 PS</p>
-                        </div>
-                    </div>
-                    <div class="icon-data-cont flex-center">
-                        <div class="icon"><i class="fas fa-atom"></i></div>
-                        <div class="descr-box">
-                            <p class="descr">Leistung</p>
-                            <p class="data">86 kW / 155 PS</p>
-                        </div>
-                    </div>
-                    <div class="icon-data-cont flex-center">
-                        <div class="icon"><i class="fas fa-atom"></i></div>
-                        <div class="descr-box">
-                            <p class="descr">Hochstgeschwindigkeit</p>
-                            <p class="data">86 kW / 155 PS</p>
-                        </div>
-                    </div>
-                    <div class="icon-data-cont flex-center">
-                        <div class="icon"><i class="fas fa-atom"></i></div>
-                        <div class="descr-box">
-                            <p class="descr">Verbrauch kombiniert</p>
-                            <p class="data">86 kW / 155 PS</p>
-                        </div>
-                    </div>
-                    <div class="icon-data-cont flex-center">
-                        <div class="icon"><i class="fas fa-atom"></i></div>
-                        <div class="descr-box">
-                            <p class="descr">Leistung</p>
-                            <p class="data">86 kW / 155 PS</p>
-                        </div>
-                    </div>
-            </div>
-            </div>
-        </div>
 
-        <div class="popup-price-cont">
-            <div></div>
-            <div class="popup-price">
-                ab <span>13.754,00</span> <span class="eur">EUR</span>
-                <p>inkl. 19% MwSt. zzgl. Versand *</p>
-            </div>
-        </div>
-        <div class="popup-main-data-cont car">
-            <div class="popup-car-data">
-                <div class="data-headl-cont">
-                    <h5 class="redish-color">TECHNISCHE DATEN</h5>
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-                <div class="daten-icon">
-                    <i class="fas fa-car"></i>
-                </div>
-                <div class="technische-daten">
+    <!-- Popup Window -->
 
+    <div class="popup-window">
+        <div class="container">
+            <!-- Car Name -->
+            <h2 class="popup-name redish-color">
+                <span class="uppercase">DFSK -</span> Fengon 5
+            </h2>
+            <!-- Full Image Container -->
+            <div class="popup-image-cont">
+                <!-- Image Box -->
+                <div class="popup-image-box">
+                    <!-- Image Slider Buttons -->
+                    <div class="image-icon icon-l flex-center">
+                        <i class="fas fa-chevron-left redish-color"></i>
+                    </div>
+                    <div class="image-icon icon-r flex-center">
+                        <i class="fas fa-chevron-right redish-color"></i>
+                    </div>
+                    <!-- Image -->
+                    <div>
+<!--                                            <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="">-->
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1641708079/Fengon-3_qrdt27.jpg" alt="">
+<!--                                       <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1642574167/DSCI2160_encpxm.jpg" alt="">-->
+                    </div>
+                </div>
+                <!-- Icon Data Container -->
+                <div class="popup-icon-data-cont">
+                    <div class="popup-icon-data">
+                        <!-- Data With Icons -->
+                        <div class="icon-data-cont flex-center">
+                            <div class="icon"><i class="fas fa-bicycle"></i></div>
+                            <div class="descr-box">
+                                <p class="descr">Leistung</p>
+                                <p class="data">86 kW / 155 PS</p>
+                            </div>
+                        </div>
+                        <div class="icon-data-cont flex-center">
+                            <div class="icon"><i class="fas fa-bicycle"></i></div>
+                            <div class="descr-box">
+                                <p class="descr">Leistung</p>
+                                <p class="data">86 kW / 155 PS</p>
+                            </div>
+                        </div>
+                        <div class="icon-data-cont flex-center">
+                            <div class="icon"><i class="fas fa-bicycle"></i></div>
+                            <div class="descr-box">
+                                <p class="descr">Hochstgeschwindigkeit</p>
+                                <p class="data">86 kW / 155 PS</p>
+                            </div>
+                        </div>
+                        <div class="icon-data-cont flex-center">
+                            <div class="icon"><i class="fas fa-bicycle"></i></div>
+                            <div class="descr-box">
+                                <p class="descr">Hochstgeschwindigkeit</p>
+                                <p class="data">86 kW / 155 PS</p>
+                            </div>
+                        </div>
+                        <div class="icon-data-cont flex-center">
+                            <div class="icon"><i class="fas fa-bicycle"></i></div>
+                            <div class="descr-box">
+                                <p class="descr">Verbrauch kombiniert</p>
+                                <p class="data">86 kW / 155 PS</p>
+                            </div>
+                        </div>
+                        <div class="icon-data-cont flex-center">
+                            <div class="icon"><i class="fas fa-bicycle"></i></div>
+                            <div class="descr-box">
+                                <p class="descr">Leistung</p>
+                                <p class="data">86 kW / 155 PS</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div></div>
-        </div>
-        <div class="popup-main-data-cont size">
-            <div class="popup-size-data">
-                <div class="data-headl-cont">
-                    <h5 class="redish-color">MAẞE UND ABMESSUNGEN</h5>
-                    <i class="fas fa-chevron-right"></i>
+            <!-- Price -->
+            <div class="popup-price-cont">
+                <div></div>
+                <div class="popup-price">
+                    ab <span>13.754,00</span> <span class="eur">EUR</span>
+                    <p>inkl. 19% MwSt. zzgl. Versand *</p>
                 </div>
-                <div class="daten-icon">
-                    <i class="fas fa-expand-arrows-alt"></i>
-                </div>
-                <div class="technische-daten">
+            </div>
+            <!-- Car Data Boxes -->
+            <div class="popup-main-data-cont car">
+                <!-- Car Data -->
+                <div class="popup-car-data">
+                    <div class="data-headl-cont">
+                        <h5 class="redish-color">TECHN<span class="not-v2">ISCHE</span> DATEN</h5>
+                        <!-- Extend Car Data Box Button -->
+                        <div onclick="toggleTechnischeDatenCont()" class="open-t-daten-btn flex-center">
+                            <i class="icon-box-arrow fas fa-chevron-right"></i>
+                            <i class="icon-box-cross fas fa-times invisible"></i>
+                        </div>
 
+                    </div>
+                    <div class="daten-icon car">
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1642452500/thumbnail_dfhs8a.png" alt="car icon">
+                    </div>
+                    <div class="technische-daten daten collapsed">
+                      <img class="hidden car" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1642452500/thumbnail_dfhs8a.png" alt="car icon">
+                       <div class="slide-in-data tech">
+                           <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">CO2 Ausstos</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Vmax</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Zylinder</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Emissionsklasse</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Antrieb</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">6,7 L (komb.)</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Allrad</div>
+                        </div>
+                       </div>
+                        
+                    </div>
                 </div>
+                <div></div>
+            </div>
+            <div class="popup-main-data-cont size">
+                <div class="popup-size-data">
+                    <div class="data-headl-cont">
+                        <h5 class="redish-color"><span class="not-v">MAẞE UND</span> ABMESSUNGEN</h5>
+                        <div onclick="toggleSizeDatenCont()" class="open-t-daten-btn flex-center">
+                            <i class="icon-box-arrow fas fa-chevron-right size"></i>
+                            <i class="icon-box-cross fas fa-times invisible size"></i>
+                        </div>
+                        
+                    </div>
+                    <div class="daten-icon size">
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1642452491/thumbnail_1_tm7hys.png" alt="size icon">
+                    </div>
+                    <div class="technische-daten size collapsed">
+                       <img class="hidden size" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1642452491/thumbnail_1_tm7hys.png" alt="size icon">
+                        <div class="slide-in-data size">
+                           <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">CO2 Ausstos</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Vmax</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Zylinder</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Benzin</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">6,7 L (komb.)</div>
+                        </div>
+                        <div class="data">
+                            <div class="data-l">Kraftstoff</div>
+                            <div class="data-rtechnische">Allrad</div>
+                        </div>
+                       </div>
+                       
+                    </div>
+                </div>
+                <div></div>
             </div>
         </div>
     </div>
-</div>
 
 
-<div class="side-navs">
-    <nav>
-        <ul>
-            <li><a href="#home-bg"><i class="fas fa-home"></i></a></li>
-            <li><a href="#about-us-cont"><i class="fas fa-user"></i></a></li>
-            <li><a href="#uber"><i class="fas fa-car"></i></a></li>
-        </ul>
-    </nav>
-</div>
-
-<header>
-    <div class="header-content">
-        <div class="logo">
-            <a href="#">
-                <img id="logo-img" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1641791579/coepmobiles-logo-1_xyywtv.png" alt="">
-            </a>
-        </div>
+    <div class="side-navs">
         <nav>
-            <ul class="navs">
-                <li class="nr"><a href="#"><i class="fas fa-phone-alt"></i> 030-278791-0</a></li>
-                <li><a href="#home-bg">Home</a></li>
-                <li><a href="#products-cont">Über Uns</a></li>
-                <li><a href="#uber">Produkte</a></li>
-                <li><a href="#footer">Kontakt/Info</a></li>
-
+            <ul>
+                <li><a href="#home-bg"><i class="fas fa-home"></i></a></li>
+                <li><a href="#about-us-cont"><i class="fas fa-user"></i></a></li>
+                <li><a href="#uber"><i class="fas fa-car"></i></a></li>
             </ul>
         </nav>
     </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="#">
+                    <img id="logo-img" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1641791579/coepmobiles-logo-1_xyywtv.png" alt="">
+                </a>
+            </div>
+            <nav>
+                <ul class="navs">
+                    <li class="nr"><a href="#"><i class="fas fa-phone-alt"></i> 030-278791-0</a></li>
+                    <li><a href="#home-bg">Home</a></li>
+                    <li><a href="#products-cont">Über Uns</a></li>
+                    <li><a href="#uber">Produkte</a></li>
+                    <li><a href="#footer">Kontakt/Info</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <!--
     <div class="menu-btn flex-center">
         <div class="sm-line"></div>
         <div class="m-line"></div>
@@ -1170,202 +1595,230 @@
             <div class="wheel"></div>
         </div>
     </div>
-</header>
-<div class="home-cont flex-center">
-    <div id="home-bg"></div>
-    <div class="container">
-        <div class="home-content">
-            <h1 class="sale-headl">FOR SALE</h1>
-            <!--           <h5 class="sub-headl">VERKAUF VON CHINESISCHEN AUTOMOBILEN</h5>-->
-            <h5 class="sub-headl">UNSERE ALTERNATIVEN CHINESISCHEN AUTOMOBILE </h5>
-            <button class="bttn home-screen-bttn flex-center"><a id="zu-produke" href="#uber"></a>ZU DEN ANGEBOTEN</button>
-        </div>
-    </div>
-    <!--         <img src="photo-1505118380757-91f5f5632de0.jpeg" alt="" class="home-bg">-->
-
-
-</div>
-<div id="products-cont">
-    <div class="container">
-        <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
-            <div id="about-us-cont">
-                <div class="about-shadow"></div>
-                <div class="about-shadow2"></div>
-                <h4 class="uppercase">Über Uns</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab reiciendis minima eaque, laudantium possimus, dicta asperiores? Impedit maiores, a ab.</p>
-                <div onclick="toggleAboutCont()" class="show-more-bttn redish-color flex-center">
-                    <i class="fas redish-color fa-chevron-right"></i>
-                </div>
+-->
+    </header>
+    <div class="home-cont flex-center">
+        <div id="home-bg"></div>
+        <div class="container">
+            <div class="home-content">
+                <h1 class="sale-headl">FOR SALE</h1>
+                <!--           <h5 class="sub-headl">VERKAUF VON CHINESISCHEN AUTOMOBILEN</h5>-->
+                <h5 class="sub-headl">UNSERE ALTERNATIVEN CHINESISCHEN AUTOMOBILE </h5>
+                <button class="bttn home-screen-bttn flex-center"><a id="zu-produke" href="#uber"></a>ZU DEN ANGEBOTEN</button>
             </div>
         </div>
-
-        <h2 id="uber" class="produkte-headl redish-color">PRODUKTUBERSICHT</h2>
-        <div id="produkte">
+        <!--         <img src="photo-1505118380757-91f5f5632de0.jpeg" alt="" class="home-bg">-->
 
 
-
-            <div class="card">
-                <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">DFSK Fengon 5</h5>
-                    <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
-
-                    <p>Lieferzeit ca. 4 Monate</p>
-
-                    <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
-                    <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
-
-
-                    <a href="#" class="btn produkt-bttn">Zum Produkt</a>
-                </div>
-            </div>
-
-
-
-            <div class="card">
-                <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">DFSK Fengon 5</h5>
-                    <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
-
-                    <p>Lieferzeit ca. 4 Monate</p>
-
-                    <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
-                    <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
-
-
-                    <a href="#" class="btn produkt-bttn">Zum Produkt</a>
-                </div>
-            </div>
-
-
-
-
-            <div class="card">
-                <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">DFSK Fengon 5</h5>
-                    <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
-
-                    <p>Lieferzeit ca. 4 Monate</p>
-
-                    <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
-                    <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
-
-
-                    <a href="#" class="btn produkt-bttn">Zum Produkt</a>
-                </div>
-            </div>
-
-
-
-            <div class="card">
-                <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">DFSK Fengon 5</h5>
-                    <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
-
-                    <p>Lieferzeit ca. 4 Monate</p>
-
-                    <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
-                    <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
-
-
-                    <a href="#" class="btn produkt-bttn">Zum Produkt</a>
-                </div>
-            </div>
-
-
-
-            <div class="card">
-                <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">DFSK Fengon 5</h5>
-                    <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
-
-                    <p>Lieferzeit ca. 4 Monate</p>
-
-                    <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
-                    <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
-
-
-                    <a href="#" class="btn produkt-bttn">Zum Produkt</a>
-                </div>
-            </div>
-
-
-            <div class="card">
-                <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">DFSK Fengon 5</h5>
-                    <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
-
-                    <p>Lieferzeit ca. 4 Monate</p>
-
-                    <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
-                    <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
-
-
-                    <a href="#" class="btn produkt-bttn">Zum Produkt</a>
-                </div>
-            </div>
-
-
-        </div>
     </div>
-</div>
-
-<footer id="footer">
-    <div onclick="topFunction()" class="to-top-btn flex-center">
-        <i class="fas fa-angle-up"></i>
-    </div>
-    <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" class="footer-line"></div>
-    <div class="container">
-        <div class="footer-content">
-            <div class="kontakt">
-
-                <div class="f-line"></div>
-                <div class="kontakt-box">
-                    <div>
-                        <h6 data-aos="fade-up" data-aos-delay="300" data-aos-duration="500" class="footer-headl">Kontakt</h6>
-                        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="300" class="footer-headl-line"></div>
-                        <ul data-aos="fade-up" data-aos-delay="600" data-aos-duration="500" class="footer-ul first">
-                            <li>Cöpmobiles Berlin</li>
-                            <li>Adlergestell 350-351</li>
-                            <li>12489 Berlin</li>
-                            <li><span>Zentrale:</span><a href="#">030-278791-0</a></li>
-                            <li><span>Ersatzteile:</span><a href="#">030-278791-21</a></li>
-                            <li><span>Werkst.meister:</span><a href="#">030-278791-13</a></li>
-                            <li><span>E-mai:</span><a href="#">info@coepmobiles.de</a></li>
-                        </ul>
+    <div id="products-cont">
+        <div class="container">
+            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
+                <div id="about-us-cont">
+                    <div class="about-shadow"></div>
+                    <div class="about-shadow2"></div>
+                    <h4 class="uppercase">Über Uns</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab reiciendis minima eaque, laudantium possimus, dicta asperiores? Impedit maiores, a ab.</p>
+                    <div onclick="toggleAboutCont()" class="show-more-bttn redish-color flex-center">
+                        <i class="fas redish-color fa-chevron-right"></i>
                     </div>
                 </div>
             </div>
-            <div class="information">
-                <h6 data-aos="fade-up" data-aos-delay="300" data-aos-duration="500" class="footer-headl">Information</h6>
-                <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="300" class="footer-headl-line"></div>
-                <ul data-aos="fade-up" data-aos-delay="600" data-aos-duration="500" class="footer-ul">
-                    <li><a href="#">Impressum</a></li>
-                    <li><a href="#">Datenschutz</a></li>
-                    <li><a href="#">AGB</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                    <li><span>Mo-Fr:</span><a href="#">7:30 - 16:30 Uhr</a></li>
-                    <li><span>Samstag:</span><a href="#">nach Vereinbarung</a></li>
-                    <li><span>Sonntag:</span><a href="#">Geschlossen</a></li>
-                </ul>
+
+            <h2 id="uber" class="produkte-headl redish-color">PRODUKTUBERSICHT</h2>
+            <div id="produkte">
+
+
+
+                <div class="card">
+                    <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">DFSK Fengon 5</h5>
+                        <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+
+                        <p>Lieferzeit ca. 4 Monate</p>
+
+                        <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                        <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                        <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">DFSK Fengon 5</h5>
+                        <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+
+                        <p>Lieferzeit ca. 4 Monate</p>
+
+                        <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                        <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                        <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                    </div>
+                </div>
+
+
+
+
+                <div class="card">
+                    <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">DFSK Fengon 5</h5>
+                        <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
+
+                        <p>Lieferzeit ca. 4 Monate</p>
+
+                        <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                        <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                        <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">DFSK Fengon 5</h5>
+                        <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
+
+                        <p>Lieferzeit ca. 4 Monate</p>
+
+                        <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                        <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                        <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">DFSK Fengon 5</h5>
+                        <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
+
+                        <p>Lieferzeit ca. 4 Monate</p>
+
+                        <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                        <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                        <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">DFSK Fengon 5</h5>
+                        <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
+
+                        <p>Lieferzeit ca. 4 Monate</p>
+
+                        <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                        <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                        <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
 
-</footer>
+    <footer id="footer">
+        <div onclick="topFunction()" class="to-top-btn flex-center">
+            <i class="fas fa-angle-up"></i>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" class="footer-line"></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="kontakt">
+
+                    <div class="f-line"></div>
+                    <div class="kontakt-box">
+                        <div>
+                            <h6 data-aos="fade-up" data-aos-delay="300" data-aos-duration="500" class="footer-headl">Kontakt</h6>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="300" class="footer-headl-line"></div>
+                            <ul data-aos="fade-up" data-aos-delay="600" data-aos-duration="500" class="footer-ul first">
+                                <li>Cöpmobiles Berlin</li>
+                                <li>Adlergestell 350-351</li>
+                                <li>12489 Berlin</li>
+                                <li><span>Zentrale:</span><a href="#">030-278791-0</a></li>
+                                <li><span>Ersatzteile:</span><a href="#">030-278791-21</a></li>
+                                <li><span>Werkst.meister:</span><a href="#">030-278791-13</a></li>
+                                <li><span>E-mai:</span><a href="#">info@coepmobiles.de</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="information">
+                    <h6 data-aos="fade-up" data-aos-delay="300" data-aos-duration="500" class="footer-headl">Information</h6>
+                    <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="300" class="footer-headl-line"></div>
+                    <ul data-aos="fade-up" data-aos-delay="600" data-aos-duration="500" class="footer-ul">
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">AGB</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                        <li><span>Mo-Fr:</span><a href="#">7:30 - 16:30 Uhr</a></li>
+                        <li><span>Samstag:</span><a href="#">nach Vereinbarung</a></li>
+                        <li><span>Sonntag:</span><a href="#">Geschlossen</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
 </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
+        
         const aboutCont = document.querySelector("#about-us-cont");
+        const dataIconCar = document.querySelector(".daten-icon.car");
+        const dataIconSize = document.querySelector(".daten-icon.size");
         const showMoreBtn = document.querySelector(".show-more-bttn");
+        const popupWindow = document.querySelector(".popup-window");
+        
+        // 
+        const iconBoxArrow = document.querySelector(".icon-box-arrow");
+        const iconBoxCross = document.querySelector(".icon-box-cross");
+        const iconBoxArrowSz = document.querySelector(".icon-box-arrow.size");
+        const iconBoxCrossSz = document.querySelector(".icon-box-cross.size");
+        
+        const iconToAnimate = document.querySelector(".daten-icon img");
+        const iconToAnimateSz = document.querySelector(".daten-icon.size img");
+        const aboutUsContainer = document.querySelector("#about-us-cont");
+       
+        
+//        const openTechDataBtn = document.querySelector(".open-t-daten-btn");
+//        const openSizeDataBtn = document.querySelector(".open-t-daten-btn.size");
+        
+        const slideInDataTech = document.querySelector(".slide-in-data.tech");
+        const slideInDataSize = document.querySelector(".slide-in-data.size");
+        const technDatenSize = document.querySelector(".technische-daten.size");
+        const technDatenData = document.querySelector(".technische-daten.daten");
+        const technDataCont = document.querySelector(".popup-main-data-cont.car");
+        const sizeDataCont = document.querySelector(".popup-main-data-cont.size");
+        const hiddenIconCar = document.querySelector(".popup-car-data img.hidden.car");
+        const hiddenIconSize = document.querySelector(".popup-size-data img.hidden.size");
 
 
         // Scroll to top Button
@@ -1396,6 +1849,77 @@
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         }    
+
+        
+        
+        // Toggles Technische Daten Container
+        const toggleTechnischeDatenCont = () => {
+            // toggles arrow/cross icon
+            iconBoxArrow.classList.toggle("invisible");
+            iconBoxCross.classList.toggle("invisible");
+            // toggles extension for data cont
+            technDataCont.classList.toggle("extended");
+            iconToAnimate.classList.toggle("icon-ani");
+            technDatenData.classList.toggle("collapsed");
+            dataIconCar.classList.toggle("invisible");
+            
+            slideInDataTech.classList.toggle("slide-in");
+            hiddenIconCar.classList.toggle("slide-in");
+        }
+        
+        // Toggles Maẞe Daten Container
+        const toggleSizeDatenCont = () => {
+            // toggles arrow/cross icon
+            iconBoxArrowSz.classList.toggle("invisible");
+            iconBoxCrossSz.classList.toggle("invisible");
+            // toggles extension for data cont
+            sizeDataCont.classList.toggle("extended");
+            iconToAnimateSz.classList.toggle("icon-ani");
+            technDatenSize.classList.toggle("collapsed");
+            dataIconSize.classList.toggle("invisible");
+            
+            slideInDataSize.classList.toggle("slide-in");
+            hiddenIconSize.classList.toggle("slide-in");
+        }
+        
+        
+        // 
+        const displayPrice = (priceNr) => {
+//            let priceNr = documnet.querySelector();
+            let priceSplit = priceNr.toString().split("");
+            let elementCounter = 0;
+            
+            for (let i = priceSplit.length+1; i >= 0; i--) {
+                elementCounter++;
+                if (elementCounter % 3 === 0) {
+                    console.log(elementCounter, console.log(priceSplit))
+                    priceSplit.splice(i, 0, ".");
+                }
+            }
+            return priceSplit.join("") + ",00";
+        }
+        
+        
+        
+        
+        const activatePopupWindow = () => {
+            popupWindow.classList.toggle("d-none");
+        }
+        
+        // icon-animation   - for icon slide right ani
+        // extended
+        
+        
+        
+        
+        
+        // 1. icon hover function onmouse bg redish, color white
+        // 2. click - this (give each arrow an id) toogle icon
+        //          - class toggle 
+        
+        
+        
+        
         
         
         // -----------------------------------------------------------------------
