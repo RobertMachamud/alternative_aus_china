@@ -134,6 +134,10 @@
             background: var(--grayish-color);
             border-radius: 3px 0 0 3px;
             flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
 /*            transform: translateX(110%);*/
         }
         
@@ -694,12 +698,10 @@
             bottom: -50%;
         }
         
+    
         
         
-        @media only screen and (max-width: 768px) 
-        {
-            
-        }
+        
         
         
         @media only screen and (max-width: 1200px)
@@ -747,6 +749,11 @@
         
         @media only screen and (max-width: 993px)
         {
+            .side-navs
+            {
+                padding: 0.5em 0em;
+            }
+            
             .popup-icon-data-cont .popup-icon-data
             {
                 padding: 1.5em;
@@ -767,6 +774,14 @@
             }
         }
         
+        @media only screen and (max-width: 993px) and (min-width: 768px)
+        {
+            .icon-data-cont
+            {
+                padding-left: 10%;
+                padding-left: 12%;
+            }
+        }
         
         @media only screen and (max-width: 768px)
         {
@@ -793,6 +808,16 @@
             }
             
 /* Main Page */
+            .home-content
+            {
+                font-size: .8em;
+            }
+            
+            .home-content h1
+            {
+/*                font-size: 3em;*/
+            }
+            
             .card
             {
                 font-size: .8em;
@@ -826,6 +851,11 @@
         
         @media only screen and (max-width: 650px)
         {
+            .home-content .sale-headl
+            {
+/*                3em;*/
+            }
+            
             #produkte
             {
                 grid-template-columns: 1fr;
@@ -865,12 +895,56 @@
         }
         
         
+/*        !!!*/
+        @media only screen and (max-width: 575px)
+        {
+            .home-content .sale-headl
+            {
+                font-size: 4em;
+            }
+            
+            .home-content
+            {
+                padding: 0 .5em;
+            }
+            
+            .home-content span.not-v
+            {
+                display: none;
+            }
+            
+            .image-icon.icon-l 
+            {
+                left: -30px;
+            }
+            
+            .image-icon.icon-r 
+            {
+                right: -30px;
+            }
+        }
         
         @media only screen and (max-width: 420px)
         {
             .not-v
             {
                 display: none;
+            }
+            
+            .container .popup-name
+            {
+                font-size: 1.5em;
+/*                !!!*/
+                margin-bottom: 1em;
+            }
+            
+            #about-us-cont
+            {
+                min-width: 0;
+                padding: 1.5em;
+                padding: 2.5em;
+                padding: 2em;
+/*                !!*/
             }
         }
         
@@ -886,7 +960,7 @@
         
         @media only screen and (max-width: 768px)
         {
-            .fas.fa-chevron-right
+            .open-t-daten-btn .fas.fa-chevron-right
             {
                 transform: rotate(90deg);
             }
@@ -1038,6 +1112,7 @@
             background: lightgray;
 /*            background: rgb(211,211,211,.7);*/
             font-size: 1.5em;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
         }
         
         .image-icon.icon-l
@@ -1102,6 +1177,11 @@
             
         }
         
+        .popup-main-data-cont.size
+        {
+            margin-bottom: 2em;
+        }
+        
         .popup-main-data-cont.car.extended,
         .popup-main-data-cont.size.extended
         {
@@ -1118,6 +1198,7 @@
             flex-direction: column;
             transition: .4s;
             box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
         }
         
         /* Hidden Car Icon (slides in) */
@@ -1585,6 +1666,52 @@
                 </ul>
             </nav>
         </div>
+        
+        
+        <div class="collapsed-header-content">
+            <div class="menu-btn">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="slide-in-navs">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#home-bg">
+                               <i class="fas fa-home"></i>
+                                <span>HOME</span>
+                            </a>
+                        </li>
+                           <li>
+                            <a href="#products-cont">
+                               <i class="fas fa-home"></i>
+                                <span>Über Uns</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#uber">
+                               <i class="fas fa-home"></i>
+                                <span>Produkte</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#footer">
+                               <i class="fas fa-home"></i>
+                                <span>Kontakt/Info</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                               <i class="fas fa-home"></i>
+                                <span>HOME</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+        </div>
         <!--
     <div class="menu-btn flex-center">
         <div class="sm-line"></div>
@@ -1603,7 +1730,7 @@
             <div class="home-content">
                 <h1 class="sale-headl">FOR SALE</h1>
                 <!--           <h5 class="sub-headl">VERKAUF VON CHINESISCHEN AUTOMOBILEN</h5>-->
-                <h5 class="sub-headl">UNSERE ALTERNATIVEN CHINESISCHEN AUTOMOBILE </h5>
+                <h5 class="sub-headl">UNSERE <span class="not-v">ALTERNATIVEN</span> CHINESISCHEN AUTOMOBILE </h5>
                 <button class="bttn home-screen-bttn flex-center"><a id="zu-produke" href="#uber"></a>ZU DEN ANGEBOTEN</button>
             </div>
         </div>
@@ -1629,112 +1756,170 @@
             <div id="produkte">
 
 
+                <div class="card-wrapper" data-aos="fade-up" data-aos-delay="50" data-aos-duration="500">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">DFSK Fengon 5</h5>
+                            <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
 
-                <div class="card">
-                    <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">DFSK Fengon 5</h5>
-                        <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+                            <p>Lieferzeit ca. 4 Monate</p>
 
-                        <p>Lieferzeit ca. 4 Monate</p>
-
-                        <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
-                        <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+                            <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                            <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
 
 
-                        <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                            <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-wrapper" data-aos="fade-up" data-aos-delay="150" data-aos-duration="500">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">DFSK Fengon 5</h5>
+                            <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+
+                            <p>Lieferzeit ca. 4 Monate</p>
+
+                            <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                            <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                            <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-wrapper" data-aos="fade-up" data-aos-delay="50" data-aos-duration="500">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">DFSK Fengon 5</h5>
+                            <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+
+                            <p>Lieferzeit ca. 4 Monate</p>
+
+                            <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                            <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                            <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-wrapper" data-aos="fade-up" data-aos-delay="150" data-aos-duration="500">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">DFSK Fengon 5</h5>
+                            <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+
+                            <p>Lieferzeit ca. 4 Monate</p>
+
+                            <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                            <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                            <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-wrapper" data-aos="fade-up" data-aos-delay="50" data-aos-duration="500">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">DFSK Fengon 5</h5>
+                            <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+
+                            <p>Lieferzeit ca. 4 Monate</p>
+
+                            <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                            <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                            <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-wrapper" data-aos="fade-up" data-aos-delay="150" data-aos-duration="500">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">DFSK Fengon 5</h5>
+                            <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+
+                            <p>Lieferzeit ca. 4 Monate</p>
+
+                            <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                            <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                            <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-wrapper" data-aos="fade-up" data-aos-delay="50" data-aos-duration="500">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">DFSK Fengon 5</h5>
+                            <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+
+                            <p>Lieferzeit ca. 4 Monate</p>
+
+                            <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                            <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                            <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-wrapper" data-aos="fade-up" data-aos-delay="150" data-aos-duration="500">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">DFSK Fengon 5</h5>
+                            <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+
+                            <p>Lieferzeit ca. 4 Monate</p>
+
+                            <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                            <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                            <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-wrapper" data-aos="fade-up" data-aos-delay="50" data-aos-duration="300">
+                    <div class="card">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">DFSK Fengon 5</h5>
+                            <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
+
+                            <p>Lieferzeit ca. 4 Monate</p>
+
+                            <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
+                            <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
+
+
+                            <a href="#" class="btn produkt-bttn">Zum Produkt</a>
+                        </div>
                     </div>
                 </div>
 
 
-
-                <div class="card">
-                    <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">DFSK Fengon 5</h5>
-                        <p class="card-text">Some quick example text build <br>to on the card build frtij titl</p>
-
-                        <p>Lieferzeit ca. 4 Monate</p>
-
-                        <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
-                        <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
-
-
-                        <a href="#" class="btn produkt-bttn">Zum Produkt</a>
-                    </div>
-                </div>
-
-
-
-
-                <div class="card">
-                    <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">DFSK Fengon 5</h5>
-                        <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
-
-                        <p>Lieferzeit ca. 4 Monate</p>
-
-                        <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
-                        <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
-
-
-                        <a href="#" class="btn produkt-bttn">Zum Produkt</a>
-                    </div>
-                </div>
-
-
-
-                <div class="card">
-                    <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">DFSK Fengon 5</h5>
-                        <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
-
-                        <p>Lieferzeit ca. 4 Monate</p>
-
-                        <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
-                        <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
-
-
-                        <a href="#" class="btn produkt-bttn">Zum Produkt</a>
-                    </div>
-                </div>
-
-
-
-                <div class="card">
-                    <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">DFSK Fengon 5</h5>
-                        <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
-
-                        <p>Lieferzeit ca. 4 Monate</p>
-
-                        <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
-                        <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
-
-
-                        <a href="#" class="btn produkt-bttn">Zum Produkt</a>
-                    </div>
-                </div>
-
-
-                <div class="card">
-                    <img class="card-img-top" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1640964803/pexels-jonas-f-6755280_mx3ce8.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">DFSK Fengon 5</h5>
-                        <p class="card-text">Some example hyatd hdaad text build <br>to on the card build dsss dczfrtij titl</p>
-
-                        <p>Lieferzeit ca. 4 Monate</p>
-
-                        <h4 class="price redish-color">ab 13.754,00 <span class="eur">EUR</span></h4>
-                        <p class="redish-color">inkl. 19% MwSt. zzgl. Versandt *</p>
-
-
-                        <a href="#" class="btn produkt-bttn">Zum Produkt</a>
-                    </div>
-                </div>
+                
 
 
             </div>
