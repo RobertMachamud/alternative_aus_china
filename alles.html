@@ -83,8 +83,62 @@
         
         
         
+/*        COLLAPSED HEADER (MOBILE) */
         
-        #logo-img
+        .logo.collapsed-header img
+        {
+            width: 10rem;
+        }
+        
+        .header-icons-box a
+        {
+            font-size: 1.6em;
+            margin-left: 2.5rem;
+        }
+        
+        /* Menu Button */
+        .menu-btn
+        {
+            position: relative;
+            margin-left: 3.5rem;
+            height: 30px;
+            width: 40px;
+            z-index: 9999990;
+        }
+        
+        .menu-btn .line
+        {
+            position: absolute;
+            background: #fff;
+            width: 100%;
+            height: 5px;
+            border-radius: 5px;
+            box-shadow: ;
+        }
+        
+        .menu-btn .line.f
+        {
+            top: 0;
+        }
+        
+        .menu-btn .line.s
+        {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .menu-btn .line.l
+        {
+            bottom: 0;
+        }
+        
+        
+        
+        
+        
+        
+        
+        .logo-img
         {
             width: 13em;
         }
@@ -120,6 +174,68 @@
         }
         
         
+        /* Collapsed Header Slide In Menu */
+        .collapsed-header-icons
+        {
+/*            margin*/
+        }
+        
+        .slide-in-navs
+        {
+            position: fixed;
+            top: 0;
+            right: 110%;
+            right: -110%;
+            width: 60%;
+            opacity: 0;
+            height: 100vh;
+            padding-left: 15%;
+            padding-top: 25%;
+            background: #555;
+            z-index: 99999;
+            box-shadow: -2px 10px 10px rgba(0,0,0,.4);
+        }
+        
+        
+        
+        /* Animation for Slide in Menu */
+        .slide-in-navs.slide-ani
+        {
+            animation: slide-ani .2s forwards;
+        }
+        
+        @keyframes slide-ani
+        {
+            to
+            {
+                opacity: 1;
+                right: 0;
+            }
+        }
+        
+        
+        .slide-in-navs nav ul li
+        {
+            height: 12vh;
+            font-size: 1.3em;
+        }
+        
+        .slide-in-navs nav ul li a
+        {
+            color: #fafafa;
+            text-transform: uppercase;
+        }
+        
+        .slide-in-navs nav ul li i
+        {
+            color: var(--redish-color);
+            margin-right: .3rem;
+            margin-right: .5rem;
+            font-size: 1.8rem;
+/*            !!! */
+            text-shadow: 1px 1px 2px rgba(0,0,0,.6);
+            text-shadow: 2px 2px 0px rgba(0,0,0,.8);
+        }
         
         
         .side-navs
@@ -185,11 +301,13 @@
             -webkit-box-shadow: 0 10px 10px -6px rgba(0,0,0,.5);
             -moz-box-shadow: 0 10px 10px -6px rgba(0,0,0,.5);
             box-shadow: 0 10px 10px -6px rgba(0,0,0,.5);
-            z-index: 999;
+            z-index: 9999999999999;
         }
         
-        .header-content
+        .header-content,
+        .collapsed-header-content
         {
+            position: relative;
             width: 100%;
             height: 100%;
             display: flex;
@@ -199,7 +317,7 @@
         
         header .header-content nav ul
         {
-            margin: auto 0
+            margin: auto 0;
         }
         
         .logo
@@ -234,7 +352,8 @@
             text-decoration: none !important;
         }
         
-        .fas.fa-phone-alt
+        .fas.fa-phone-alt,
+        .fa-map-marker-alt
         {
             margin-right: 3px;
             color: var(--redish-color);
@@ -747,6 +866,54 @@
         }
         
         
+        
+        @media only screen and (min-width: 1100px)
+        {
+            .collapsed-header-content
+            {
+                display: none;
+            }
+            
+            .slide-in-navs
+            {
+                display: none;
+            }
+        }
+        
+        @media only screen and (max-width: 1100px)
+        {
+            header
+            {
+                padding: 0 3em;
+            }
+            
+            .header-content
+            {
+                display: none;
+            }
+            
+            #home-bg
+            {
+                background: url("https://res.cloudinary.com/dxcrd5sos/image/upload/v1643332580/pexels-gerd-altmann-21694_ynrrv1.jpg");
+                background-position-x: -50%;
+            }
+            
+            .sale-headl
+/*            .sub-headl*/
+            {
+                text-shadow: 3px 3px 3px rgba(0,0,0,1);
+            }
+            
+            .sub-headl
+            {
+                font-weight: 600;
+                font-size: 1.4em;
+                text-shadow: 2px 2px 1px rgba(0,0,0,1);
+                text-shadow: 3px 3px 1px rgba(0,0,0,1);
+            }
+        }
+        
+        
         @media only screen and (max-width: 993px)
         {
             .side-navs
@@ -895,9 +1062,27 @@
         }
         
         
-/*        !!!*/
+/*        !!!*/ 
         @media only screen and (max-width: 575px)
         {
+            header
+            {
+                padding: 1.5em;
+            }
+            
+            .slide-in-navs
+            {
+                
+            }
+            
+            .slide-in-navs
+            {
+                width: 85% !important;
+                display: flex;
+                align-items: flex-end;
+                padding-bottom: 25%;
+            }
+            
             .home-content .sale-headl
             {
                 font-size: 4em;
@@ -922,6 +1107,43 @@
             {
                 right: -30px;
             }
+            
+            .header-icons-box
+            {
+                display: none;
+            }
+            /* changes padding on extended data cont */
+            .popup-main-data-cont.extended .popup-car-data,
+            .popup-main-data-cont.extended .popup-size-data
+            {
+                padding: 1.5em;
+                padding: .5em;
+                padding: .3em;
+/*                padding: .8em;*/
+/*                padding: 0em;*/
+                
+                
+                
+/* padding should be not effected by transition effect on mobile && adjust font size */
+/*                evtl .8em oder so*/
+            }
+/*            !!!!! */
+            .popup-main-data-cont .technische-daten .slide-in-data,
+            .popup-main-data-cont .technische-daten .popup-size-data
+            {
+                font-size: 10px !important;
+            }
+            
+            .popup-icon-data-cont .popup-icon-data
+            {
+                font-size: 12px;
+/*                font-size: 14px;*/
+            }
+            
+            .descr-box
+            {
+                font-size: 12px;
+            }
         }
         
         @media only screen and (max-width: 420px)
@@ -929,6 +1151,13 @@
             .not-v
             {
                 display: none;
+            }
+            
+            
+            
+            body .main-cont header
+            {
+                padding: 1.5em !important;
             }
             
             .container .popup-name
@@ -954,9 +1183,14 @@
             {
                 display: none;
             }
+            
+            .slide-in-navs
+            {
+                width: 100% !important;
+            }
         }
         
-        
+                
         
         @media only screen and (max-width: 768px)
         {
@@ -982,6 +1216,7 @@
         
         
         /* Menu Button */
+/*
         .menu-btn
         {
             position: relative;
@@ -1036,10 +1271,11 @@
             border: solid 4px #fff;
         }
         
+*/
         
         
         
-        
+/*        .menu*/
         
         
         
@@ -1652,7 +1888,7 @@
         <div class="header-content">
             <div class="logo">
                 <a href="#">
-                    <img id="logo-img" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1641791579/coepmobiles-logo-1_xyywtv.png" alt="">
+                    <img class="logo-img" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1641791579/coepmobiles-logo-1_xyywtv.png" alt="">
                 </a>
             </div>
             <nav>
@@ -1661,7 +1897,7 @@
                     <li><a href="#home-bg">Home</a></li>
                     <li><a href="#products-cont">Über Uns</a></li>
                     <li><a href="#uber">Produkte</a></li>
-                    <li><a href="#footer">Kontakt/Info</a></li>
+                    <li><a href="#footer">Kontakt / Info</a></li>
 
                 </ul>
             </nav>
@@ -1669,12 +1905,38 @@
         
         
         <div class="collapsed-header-content">
-            <div class="menu-btn">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+            <div class="logo collapsed-header">
+                <a href="#">
+                    <img class="logo-img" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1641791579/coepmobiles-logo-1_xyywtv.png" alt="logo">
+                </a>
             </div>
-            <div class="slide-in-navs">
+            <div class="collapsed-header-icons flex-center">
+               <div class="header-icons-box">
+                   <a href="#"><i class="fas fa-phone-alt"></i></a>
+                   <a href="#footer"><i class="fas fa-map-marker-alt"></i></a>
+               </div>
+                <div onclick="toggleSlideInMenu()" class="menu-btn">
+                    <div class="line f"></div>
+                    <div class="line s"></div>
+                    <div class="line l"></div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!--
+    <div class="menu-btn flex-center">
+        <div class="sm-line"></div>
+        <div class="m-line"></div>
+        <div class="l-line"></div>
+        <div class="wheels">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+        </div>
+    </div>
+-->
+    </header>
+    <div class="slide-in-navs">
                 <nav>
                     <ul>
                         <li>
@@ -1698,7 +1960,7 @@
                         <li>
                             <a href="#footer">
                                <i class="fas fa-home"></i>
-                                <span>Kontakt/Info</span>
+                                <span>Kontakt / Info</span>
                             </a>
                         </li>
                         <li>
@@ -1710,20 +1972,6 @@
                     </ul>
                 </nav>
             </div>
-            
-        </div>
-        <!--
-    <div class="menu-btn flex-center">
-        <div class="sm-line"></div>
-        <div class="m-line"></div>
-        <div class="l-line"></div>
-        <div class="wheels">
-            <div class="wheel"></div>
-            <div class="wheel"></div>
-        </div>
-    </div>
--->
-    </header>
     <div class="home-cont flex-center">
         <div id="home-bg"></div>
         <div class="container">
@@ -1991,6 +2239,8 @@
         const iconToAnimate = document.querySelector(".daten-icon img");
         const iconToAnimateSz = document.querySelector(".daten-icon.size img");
         const aboutUsContainer = document.querySelector("#about-us-cont");
+        
+        const slideInMenu = document.querySelector(".slide-in-navs");
        
         
 //        const openTechDataBtn = document.querySelector(".open-t-daten-btn");
@@ -2004,6 +2254,8 @@
         const sizeDataCont = document.querySelector(".popup-main-data-cont.size");
         const hiddenIconCar = document.querySelector(".popup-car-data img.hidden.car");
         const hiddenIconSize = document.querySelector(".popup-size-data img.hidden.size");
+        
+        let slideMenuOpen = false;
 
 
         // Scroll to top Button
@@ -2017,6 +2269,19 @@
         // AOS scrolling
         AOS.init();
 
+        
+        const toggleSlideInMenu = () => {
+            if (slideMenuOpen) {
+                slideInMenu.classList.remove("slide-ani");
+                slideMenuOpen = false;
+            }
+            else {
+                slideInMenu.classList.add("slide-ani");
+                slideMenuOpen = true;
+            }
+        }
+        
+        
 
         // Toggles About Container
         const toggleAboutCont = () => {
@@ -2091,8 +2356,6 @@
             popupWindow.classList.toggle("d-none");
         }
         
-        // icon-animation   - for icon slide right ani
-        // extended
         
         
         
@@ -2105,7 +2368,12 @@
         
         
         
-        
+        // Parallax auf home screen text incl button
+        // eventlistener click auf alles - wenn Slide menu open -> func - to close
+        // info in car cards produkte - category (pkw/camper) etc. - evtl icon
+        // evtl bei lieferzeit color punkt
+        // side nav bis ca 660px dann disp-none
+        // !!!!!
         
         // -----------------------------------------------------------------------
         
