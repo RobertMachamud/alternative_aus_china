@@ -103,6 +103,7 @@
             margin-left: 3.5rem;
             height: 30px;
             width: 40px;
+            cursor: pointer;
             z-index: 9999990;
         }
         
@@ -112,6 +113,7 @@
             background: #fff;
             width: 100%;
             height: 5px;
+            transition: .2s ease-out;
             border-radius: 5px;
             box-shadow: ;
         }
@@ -121,15 +123,35 @@
             top: 0;
         }
         
+        .menu-btn .line.f.to-cross
+        {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        
         .menu-btn .line.s
         {
             top: 50%;
+            transition: .1s;
             transform: translateY(-50%);
+        }
+        
+        .menu-btn .line.s.to-cross
+        {
+            opacity: 0;
         }
         
         .menu-btn .line.l
         {
             bottom: 0;
+        }
+        
+        .menu-btn .line.l.to-cross
+        {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
         }
         
         
@@ -301,7 +323,7 @@
             -webkit-box-shadow: 0 10px 10px -6px rgba(0,0,0,.5);
             -moz-box-shadow: 0 10px 10px -6px rgba(0,0,0,.5);
             box-shadow: 0 10px 10px -6px rgba(0,0,0,.5);
-            z-index: 9999999999999;
+            z-index: 99999999;
         }
         
         .header-content,
@@ -331,11 +353,15 @@
         {
             font-size: 16px !important;
             vertical-align: bottom;
-            border-bottom: solid 2px #fafafa;
+            border-bottom: solid 1px #fafafa;
             font-weight: 400 !important;
             margin-right: 3em;
 /*            color: var(--redish-color) !important;*/
-            transition: .2s;
+        }
+        
+        .nr > a:hover
+        {
+/*            border-bottom: solid 2px #fafafa;*/
         }
         
         .navs li.nr:hover
@@ -348,7 +374,6 @@
         {
             border-bottom: solid 2px #fff;;
             color: #fff !important;
-            font-weight: bold !important;
             text-decoration: none !important;
         }
         
@@ -357,6 +382,7 @@
         {
             margin-right: 3px;
             color: var(--redish-color);
+            text-shadow: 1px 1px 1px rgba(0,0,0,.6);
         }
         
         
@@ -923,19 +949,20 @@
             
             .popup-icon-data-cont .popup-icon-data
             {
-                padding: 1.5em;
                 padding: 2.5em 1.5em;
                 grid-template-columns: 1fr 1fr;
             }
             
             .container .popup-main-data-cont.car.extended,
-            .container .popup-main-data-cont.size.extended
+            .container .popup-main-data-cont.size.extended,
+            .container .popup-main-data-cont.beschr.extended
             {
                 grid-template-columns: 10fr 2fr !important;
             }
             
             .popup-car-data .data-headl-cont h5,
-            .popup-size-data .data-headl-cont h5
+            .popup-size-data .data-headl-cont h5,
+            .popup-beschr-data .data-headl-cont h5
             {
                 font-size: .9em;
             }
@@ -964,7 +991,8 @@
             }
             
             .container .popup-main-data-cont.car.extended,
-            .container .popup-main-data-cont.size.extended
+            .container .popup-main-data-cont.size.extended,
+            .container .popup-main-data-cont.beschr.extended
             {
                 grid-template-columns: 12fr 0fr !important;
             }
@@ -1018,6 +1046,27 @@
         
         @media only screen and (max-width: 650px)
         {
+            header
+            {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 80px;
+                height: 70px;
+                height: 60px;
+            }
+/*            !!!! */
+            .menu-btn
+            {
+                height: 28px;
+            }
+            .logo-img
+            {
+                transform: scale(.9);
+                transform: scale(.80);
+                transform: scale(.85);
+            }
+            
             .home-content .sale-headl
             {
 /*                3em;*/
@@ -1035,6 +1084,7 @@
                 padding: 2em;
                 padding: 1.5em;
                 padding: 1.8em;
+                padding: 2.5em 4.5em;
             }
             
 /*
@@ -1152,9 +1202,7 @@
             {
                 display: none;
             }
-            
-            
-            
+                        
             body .main-cont header
             {
                 padding: 1.5em !important;
@@ -1174,6 +1222,15 @@
                 padding: 2.5em;
                 padding: 2em;
 /*                !!*/
+            }
+        }
+        
+        
+        @media only screen and (max-width: 390px)
+        {
+            .popup-icon-data-cont .popup-icon-data
+            {
+                padding: 2.5em 3.5em;
             }
         }
         
@@ -1294,7 +1351,7 @@
             padding-top: 3em;
             padding-top: 2em;
             min-height: 100vh;
-            z-index: 99999999;
+            z-index: 99999999999;
             background: #fff;
         }
         
@@ -1419,13 +1476,15 @@
         }
         
         .popup-main-data-cont.car.extended,
-        .popup-main-data-cont.size.extended
+        .popup-main-data-cont.size.extended,
+        .popup-main-data-cont.beschr.extended
         {
             grid-template-columns: 8fr 4fr !important;
         }
         
         .popup-car-data,
-        .popup-size-data
+        .popup-size-data,
+        .popup-beschr-data
         {
             position: relative;
             margin-bottom: 2em;
@@ -1439,7 +1498,8 @@
         
         /* Hidden Car Icon (slides in) */
         .popup-car-data img.hidden,
-        .popup-size-data img.hidden
+        .popup-size-data img.hidden,
+        .popup-beschr-data img.hidden
         {
             position: absolute;
             right: 0%;
@@ -1451,7 +1511,8 @@
         }
         
         .popup-car-data img.hidden.slide-in,
-        .popup-size-data img.hidden.slide-in
+        .popup-size-data img.hidden.slide-in,
+        .popup-beschr-data img.hidden.slide-in
         {
             right: -8.5rem;
 /*            right: -20%;*/
@@ -1470,7 +1531,8 @@
         
         
         .popup-car-data h5,
-        .popup-size-data h5
+        .popup-size-data h5,
+        .popup-beschr-data h5
         {
             margin: 0;
         }
@@ -1547,6 +1609,7 @@
             font-size: 2em;
             margin-right: .8em;
             margin-right: .5em;
+            margin-right: 25px;
         }
         
         .descr-box p
@@ -1732,7 +1795,38 @@
                 </div>
             </div>
             <!-- Car Data Boxes -->
-            <div class="popup-main-data-cont car">
+            
+            <div class="popup-main-data-cont beschr">
+                <!-- Car Data -->
+                <div class="popup-beschr-data">
+                    <div class="data-headl-cont">
+                        <h5 class="redish-color">BESCHR<span class="not-v2">EIBUNG</span></h5>
+                        <!-- Extend Car Data Box Button -->
+                        <div onclick="toggleBeschrDatenCont()" class="open-t-daten-btn flex-center">
+                            <i class="icon-box-arrow fas fa-chevron-right beschr"></i>
+                            <i class="icon-box-cross fas fa-times beschr invisible"></i>
+                        </div>
+
+                    </div>
+                    <div class="daten-icon beschr">
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1642452500/thumbnail_dfhs8a.png" alt="car icon">
+                    </div>
+                    <div class="technische-daten beschr collapsed">
+                      <img class="hidden beschr" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1642452500/thumbnail_dfhs8a.png" alt="car icon">
+                       <div class="slide-in-data beschr">
+                           <P>
+                               ist bei uns das Einstiegsmodell bei DFSK zum absoluten Tiefpreis. Ein modernes aussergewöhnliches <br> Design, die gute Qualität, ausgereifte Technik und der neue 1,5 Euro6D Motor begeistern die Kunden. DFSK <br>schließt mit dem Fengon 500 die Lücke im Kleinwagensegment.
+                                <br>
+                                Dieser kleine SUV für Einsteiger wird auch Sie begeistern.
+                           </P>
+                       </div>
+                    </div>
+                </div>
+                <div></div>
+            </div> 
+               
+                        
+              <div class="popup-main-data-cont car">
                 <!-- Car Data -->
                 <div class="popup-car-data">
                     <div class="data-headl-cont">
@@ -2224,53 +2318,87 @@
 
     <script>
         
+        // Menu Button - Lines
+        const menuFirstLine = document.querySelector(".menu-btn .line.f");
+        const menuSecndLine = document.querySelector(".menu-btn .line.s");
+        const menuLastLine = document.querySelector(".menu-btn .line.l");
+        
         const aboutCont = document.querySelector("#about-us-cont");
-        const dataIconCar = document.querySelector(".daten-icon.car");
-        const dataIconSize = document.querySelector(".daten-icon.size");
-        const showMoreBtn = document.querySelector(".show-more-bttn");
         const popupWindow = document.querySelector(".popup-window");
+        const slideInMenu = document.querySelector(".slide-in-navs");
+        const showMoreBtn = document.querySelector(".show-more-bttn");
+        
         
         // 
         const iconBoxArrow = document.querySelector(".icon-box-arrow");
         const iconBoxCross = document.querySelector(".icon-box-cross");
         const iconBoxArrowSz = document.querySelector(".icon-box-arrow.size");
         const iconBoxCrossSz = document.querySelector(".icon-box-cross.size");
+        const iconBoxArrowBe = document.querySelector(".icon-box-arrow.beschr");
+        const iconBoxCrossBe = document.querySelector(".icon-box-cross.beschr");
         
+        //
         const iconToAnimate = document.querySelector(".daten-icon img");
         const iconToAnimateSz = document.querySelector(".daten-icon.size img");
-        const aboutUsContainer = document.querySelector("#about-us-cont");
-        
-        const slideInMenu = document.querySelector(".slide-in-navs");
-       
+        const iconToAnimateBe = document.querySelector(".daten-icon.beschr img");
+
         
 //        const openTechDataBtn = document.querySelector(".open-t-daten-btn");
 //        const openSizeDataBtn = document.querySelector(".open-t-daten-btn.size");
         
+        
+        // 
+        const dataIconCar = document.querySelector(".daten-icon.car");
+        const dataIconSize = document.querySelector(".daten-icon.size");
+        const dataIconBeschr = document.querySelector(".daten-icon.beschr");
+        
+        //
         const slideInDataTech = document.querySelector(".slide-in-data.tech");
         const slideInDataSize = document.querySelector(".slide-in-data.size");
+        const slideInDataBeschr = document.querySelector(".slide-in-data.beschr");
+        
+        //
         const technDatenSize = document.querySelector(".technische-daten.size");
         const technDatenData = document.querySelector(".technische-daten.daten");
+        const technDatenBeschr = document.querySelector(".technische-daten.daten");
+        
+        //
         const technDataCont = document.querySelector(".popup-main-data-cont.car");
         const sizeDataCont = document.querySelector(".popup-main-data-cont.size");
+        const beschrDataCont = document.querySelector(".popup-main-data-cont.beschr");
+        
+        // 
         const hiddenIconCar = document.querySelector(".popup-car-data img.hidden.car");
         const hiddenIconSize = document.querySelector(".popup-size-data img.hidden.size");
+        const hiddenIconBeschr = document.querySelector(".popup-beschr-data img.hidden.beschr");
         
+        
+        // Slide-Menu open/closed
         let slideMenuOpen = false;
 
 
+        
+
+        // AOS scrolling
+        AOS.init();
+
+        
         // Scroll to top Button
         const scrollToTop = () => {
             $('html, body').animate({
                 scrollTop: 0
             }, 'fast');
         }
-
-
-        // AOS scrolling
-        AOS.init();
-
         
+        
+        // Menu Button - Slides in Menu
         const toggleSlideInMenu = () => {
+            // animates menu lines (to cross)
+            menuFirstLine.classList.toggle("to-cross");
+            menuSecndLine.classList.toggle("to-cross");
+            menuLastLine.classList.toggle("to-cross");
+            
+            // slides menu
             if (slideMenuOpen) {
                 slideInMenu.classList.remove("slide-ani");
                 slideMenuOpen = false;
@@ -2279,8 +2407,19 @@
                 slideInMenu.classList.add("slide-ani");
                 slideMenuOpen = true;
             }
+            
+            console.log(document.referrer)
         }
         
+        
+        // Return back to prev site
+        const returnToPrevSite = () => {
+            if (document.referrer.contains("aus-china")) {
+                
+            } else {
+                
+            }
+        }
         
 
         // Toggles About Container
@@ -2317,6 +2456,7 @@
             hiddenIconCar.classList.toggle("slide-in");
         }
         
+        
         // Toggles Maẞe Daten Container
         const toggleSizeDatenCont = () => {
             // toggles arrow/cross icon
@@ -2330,6 +2470,22 @@
             
             slideInDataSize.classList.toggle("slide-in");
             hiddenIconSize.classList.toggle("slide-in");
+        }
+        
+        
+        // Toggles Maẞe Daten Container
+        const toggleBeschrDatenCont = () => {
+            // toggles arrow/cross icon
+            iconBoxArrowBe.classList.toggle("invisible");
+            iconBoxCrossBe.classList.toggle("invisible");
+            // toggles extension for data cont
+            beschrDataCont.classList.toggle("extended");
+            iconToAnimateBe.classList.toggle("icon-ani");
+            technDatenBeschr.classList.toggle("collapsed");
+            dataIconBeschr.classList.toggle("invisible");
+            
+            slideInDataBeschr.classList.toggle("slide-in");
+            hiddenIconBeschr.classList.toggle("slide-in");
         }
         
         
@@ -2373,6 +2529,8 @@
         // info in car cards produkte - category (pkw/camper) etc. - evtl icon
         // evtl bei lieferzeit color punkt
         // side nav bis ca 660px dann disp-none
+        
+        // 3. box Auto Beschreibung!!! frag Sammy wie - info icon slide down/3. box
         // !!!!!
         
         // -----------------------------------------------------------------------
